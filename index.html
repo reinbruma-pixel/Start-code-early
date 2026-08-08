@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Princess Xylene 💗</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #ffb6d9, #ffd6e7, #ff8fc1);
+}
+
+/* =========================
+   INTRO SCREEN
+========================= */
+
+#intro {
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    transition: 1s ease;
+}
+
+#intro h1 {
+    color: white;
+    font-size: clamp(35px, 7vw, 70px);
+
+    text-shadow:
+        0 0 10px #ff4f91,
+        0 0 20px #ff4f91;
+
+    animation: glow 2s infinite alternate;
+}
+
+#intro p {
+    color: white;
+    font-size: clamp(16px, 3vw, 22px);
+    margin: 20px;
+}
+
+button {
+    border: none;
+    padding: 16px 35px;
+
+    border-radius: 50px;
+
+    background: white;
+    color: #e83e82;
+
+    font-size: 18px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(150, 0, 70, 0.25);
+
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background: #ffe6f0;
+}
+
+/* =========================
+   APOLOGY SCREEN
+========================= */
+
+#apology {
+    position: absolute;
+
+    width: 100%;
+    height: 100vh;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: scale(1.1);
+
+    transition: 1s ease;
+}
+
+/* Apology card */
+
+.card {
+    width: min(90%, 700px);
+    max-height: 90vh;
+
+    padding: clamp(20px, 5vw, 45px);
+
+    background: rgba(255,255,255,0.92);
+
+    border-radius: 30px;
+
+    text-align: center;
+
+    box-shadow:
+        0 20px 60px rgba(160, 30, 90, 0.3);
+
+    position: relative;
+    z-index: 5;
+
+    animation: cardAppear 1.5s ease;
+}
+
+.card h1 {
+    color: #df3677;
+
+    font-size: clamp(28px, 5vw, 45px);
+
+    margin-bottom: 5px;
+}
+
+.card h2 {
+    color: #f05a91;
+
+    font-size: clamp(18px, 3vw, 25px);
+
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #555;
+
+    font-size: clamp(14px, 2vw, 18px);
+
+    line-height: 1.5;
+
+    margin: 10px auto;
+
+    max-width: 620px;
+}
+
+.signature {
+    margin-top: 18px;
+
+    color: #df3677;
+
+    font-size: clamp(15px, 2.5vw, 20px);
+
+    font-weight: bold;
+}
+
+/* =========================
+   HEART
+========================= */
+
+.heart {
+    width: 55px;
+    height: 55px;
+
+    background: #ff4f91;
+
+    position: relative;
+
+    margin: 0 auto 25px;
+
+    transform: rotate(-45deg);
+
+    animation: heartbeat 1s infinite;
+
+    box-shadow: 0 0 20px #ff75a8;
+}
+
+.heart::before,
+.heart::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 55px;
+    height: 55px;
+
+    background: #ff4f91;
+
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -27px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 27px;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: rotate(-45deg) scale(1);
+    }
+
+    50% {
+        transform: rotate(-45deg) scale(1.2);
+    }
+}
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.floating-heart {
+
+    position: absolute;
+
+    bottom: -50px;
+
+    color: #ff4f91;
+
+    font-size: 25px;
+
+    opacity: 0;
+
+    animation: floatHeart linear infinite;
+
+    z-index: 1;
+}
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Different heart positions */
+
+.h1 {
+    left: 5%;
+    animation-duration: 7s;
+}
+
+.h2 {
+    left: 20%;
+    animation-duration: 9s;
+    animation-delay: 2s;
+}
+
+.h3 {
+    left: 40%;
+    animation-duration: 6s;
+    animation-delay: 1s;
+}
+
+.h4 {
+    left: 60%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+}
+
+.h5 {
+    left: 80%;
+    animation-duration: 10s;
+    animation-delay: 1s;
+}
+
+.h6 {
+    left: 92%;
+    animation-duration: 7s;
+    animation-delay: 4s;
+}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes glow {
+
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- =========================
+     INTRO
+========================= -->
+
+<section id="intro">
+
+    <h1>For Princess Xylene </h1>
+
+    <p>
+        I made something for you...
+    </p>
+
+    <button onclick="openApology()">
+        💗 Open My Apology 💗
+    </button>
+
+</section>
+
+
+<!-- =========================
+     APOLOGY
+========================= -->
+
+<section id="apology">
+
+    <!-- Floating hearts -->
+
+    <div class="floating-heart h1">♥</div>
+    <div class="floating-heart h2">♥</div>
+    <div class="floating-heart h3">♥</div>
+    <div class="floating-heart h4">♥</div>
+    <div class="floating-heart h5">♥</div>
+    <div class="floating-heart h6">♥</div>
+
+
+    <div class="card">
+
+        <div class="heart"></div>
+
+        <h1>Sincerely, I'm Sorry</h1>
+
+        <h2>Princess Xylene </h2>
+
+        <p>
+            I sincerely apologize for what I did and for any
+            hurt or disappointment I may have caused you.
+        </p>
+
+        <p>
+            I know that saying sorry cannot instantly fix everything,
+            but I truly mean it. I regret my actions and I take
+            responsibility for my mistakes.
+        </p>
+
+        <p>
+            You deserve kindness, respect, and honesty.
+            I'm sorry for falling short of that.
+            I will learn from my mistakes and try my best
+            to become a better person.
+        </p>
+
+        <p>
+            I don't expect you to forget everything right away.
+            I just wanted you to know that this apology is
+            sincere and comes from my heart.
+        </p>
+
+        <div class="signature">
+            I'm truly sorry, Xylene. 💗
+            <br><br>
+            — From someone who genuinely regrets it
+        </div>
+
+    </div>
+
+</section>
+
+
+<script>
+
+function openApology() {
+
+    const intro = document.getElementById("intro");
+    const apology = document.getElementById("apology");
+
+    /* Fade out intro */
+
+    intro.style.opacity = "0";
+    intro.style.transform = "scale(0.9)";
+
+    /* Show apology */
+
+    setTimeout(function() {
+
+        intro.style.display = "none";
+
+        apology.style.visibility = "visible";
+        apology.style.opacity = "1";
+        apology.style.transform = "scale(1)";
+
+    }, 700);
+}
+
+</script>
+
+</body>
+</html>
